@@ -57,7 +57,42 @@ namespace Parcial1_YersonEscolastico.UI.Registro
         }
 
 
-        private void Nuevobutton_Click(object sender, EventArgs e)
+        private bool Validar()
+        {
+            bool paso = true;
+            MyErrorProvider.Clear();
+
+            if (DescripciontextBox.Text == string.Empty)
+            {
+                MyErrorProvider.SetError(DescripciontextBox, "Este campo no puede estar vacio");
+                DescripciontextBox.Focus();
+                paso = false;
+            }
+            if (ExistenciatextBox.Text == string.Empty)
+            {
+                MyErrorProvider.SetError(ExistenciatextBox, "Este campo no puede estar vacio");
+                ExistenciatextBox.Focus();
+                paso = false;
+            }
+            if (CostotextBox.Text == string.Empty)
+            {
+                MyErrorProvider.SetError(CostotextBox, "Este campo no puede estar vacio");
+                CostotextBox.Focus();
+                paso = false;
+            }
+
+            if (ValorInventariotextBox.Text == string.Empty)
+            {
+                MyErrorProvider.SetError(ValorInventariotextBox, "Este campo no puede estar vacio");
+                ValorInventariotextBox.Focus();
+                paso = false;
+            }
+
+            return paso;
+        }
+
+
+            private void Nuevobutton_Click(object sender, EventArgs e)
         {
             Limpiar();
         }
@@ -119,6 +154,8 @@ namespace Parcial1_YersonEscolastico.UI.Registro
             else
                 MyErrorProvider.SetError(IDnumericUpDown, "No se puede eliminar una persona que no existe");
         }
+
+
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {

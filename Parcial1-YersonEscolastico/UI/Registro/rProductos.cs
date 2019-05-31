@@ -120,9 +120,29 @@ namespace Parcial1_YersonEscolastico.UI.Registro
                 MyErrorProvider.SetError(IDnumericUpDown, "No se puede eliminar una persona que no existe");
         }
 
+        private void Buscarbutton_Click(object sender, EventArgs e)
+        {
+            int id;
+            Productos productos = new Productos();
+            int.TryParse(IDnumericUpDown.Text, out id);
+
+            Limpiar();
+
+            productos = ProductosBLL.Buscar(id);
+
+            if (productos != null)
+            {
+                MessageBox.Show("Usuario Encontrado");
+                LlenaCampo(productos);
+            }
+            else
+            {
+                MessageBox.Show("Usuario no Encontada");
+            }
+        }
 
 
-        private void ExistenciatextBox_TextChanged(object sender, EventArgs e)
+            private void ExistenciatextBox_TextChanged(object sender, EventArgs e)
         {
             if (CostotextBox.Text.Length > 0 && ExistenciatextBox.Text.Length > 0)
                 ValorInventariotextBox.Text = Convert.ToString(Convert.ToInt32(CostotextBox.Text) * Convert.ToInt32(ExistenciatextBox.Text));
@@ -152,6 +172,7 @@ namespace Parcial1_YersonEscolastico.UI.Registro
 
             if (CostotextBox.Text.Length == 0 && ExistenciatextBox.Text.Length == 0)
                 ValorInventariotextBox.Text = "0";
+
         }
     }
 }

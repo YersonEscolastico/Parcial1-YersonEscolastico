@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Parcial1_YersonEscolastico.Entidades
 {
-    class Productos
+    public class Productos
     {
 
         public int ProductoId { get; set; }

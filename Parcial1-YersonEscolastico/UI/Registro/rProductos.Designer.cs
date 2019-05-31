@@ -40,7 +40,7 @@
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
-            this.Modificarbutton = new System.Windows.Forms.Button();
+            this.Eliminarbutton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.CostotextBox = new System.Windows.Forms.TextBox();
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
@@ -104,11 +104,13 @@
             this.ExistenciatextBox.Name = "ExistenciatextBox";
             this.ExistenciatextBox.Size = new System.Drawing.Size(100, 20);
             this.ExistenciatextBox.TabIndex = 7;
+            this.ExistenciatextBox.TextChanged += new System.EventHandler(this.ExistenciatextBox_TextChanged);
             // 
             // ValorInventariotextBox
             // 
             this.ValorInventariotextBox.Location = new System.Drawing.Point(109, 233);
             this.ValorInventariotextBox.Name = "ValorInventariotextBox";
+            this.ValorInventariotextBox.ReadOnly = true;
             this.ValorInventariotextBox.Size = new System.Drawing.Size(100, 20);
             this.ValorInventariotextBox.TabIndex = 8;
             // 
@@ -129,6 +131,7 @@
             this.Nuevobutton.TabIndex = 10;
             this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.UseVisualStyleBackColor = true;
+            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
             // Guardarbutton
             // 
@@ -138,15 +141,17 @@
             this.Guardarbutton.TabIndex = 11;
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.UseVisualStyleBackColor = true;
+            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
             // 
-            // Modificarbutton
+            // Eliminarbutton
             // 
-            this.Modificarbutton.Location = new System.Drawing.Point(234, 319);
-            this.Modificarbutton.Name = "Modificarbutton";
-            this.Modificarbutton.Size = new System.Drawing.Size(75, 51);
-            this.Modificarbutton.TabIndex = 12;
-            this.Modificarbutton.Text = "Modificar";
-            this.Modificarbutton.UseVisualStyleBackColor = true;
+            this.Eliminarbutton.Location = new System.Drawing.Point(234, 319);
+            this.Eliminarbutton.Name = "Eliminarbutton";
+            this.Eliminarbutton.Size = new System.Drawing.Size(75, 51);
+            this.Eliminarbutton.TabIndex = 12;
+            this.Eliminarbutton.Text = "Eliminar";
+            this.Eliminarbutton.UseVisualStyleBackColor = true;
+            this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
             // 
             // label1
             // 
@@ -163,6 +168,7 @@
             this.CostotextBox.Name = "CostotextBox";
             this.CostotextBox.Size = new System.Drawing.Size(100, 20);
             this.CostotextBox.TabIndex = 14;
+            this.CostotextBox.TextChanged += new System.EventHandler(this.CostotextBox_TextChanged);
             // 
             // MyErrorProvider
             // 
@@ -175,7 +181,7 @@
             this.ClientSize = new System.Drawing.Size(321, 382);
             this.Controls.Add(this.CostotextBox);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.Modificarbutton);
+            this.Controls.Add(this.Eliminarbutton);
             this.Controls.Add(this.Guardarbutton);
             this.Controls.Add(this.Nuevobutton);
             this.Controls.Add(this.Buscarbutton);
@@ -209,7 +215,7 @@
         private System.Windows.Forms.Button Buscarbutton;
         private System.Windows.Forms.Button Nuevobutton;
         private System.Windows.Forms.Button Guardarbutton;
-        private System.Windows.Forms.Button Modificarbutton;
+        private System.Windows.Forms.Button Eliminarbutton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox CostotextBox;
         private System.Windows.Forms.ErrorProvider MyErrorProvider;

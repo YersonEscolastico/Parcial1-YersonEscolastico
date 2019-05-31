@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,20 +9,20 @@ namespace Parcial1_YersonEscolastico.Entidades
 {
     public class Productos
     {
-
+        [Key]
         public int ProductoId { get; set; }
         public string Descripcion { get; set; }
-        public float Existencia { get; set; }
-        public float Costo { get; set; }
-        public float ValorInventario { get; set; }
+        public double Existencia { get; set; }
+        public double Costo { get; set; }
+        public double ValorInventario { get; set; }
 
         public Productos()
         {
             ProductoId = 0;
             Descripcion = string.Empty;
-            Existencia = 0.0f;
-            Costo = 0.0f;
-            ValorInventario = 0.0f;
+            Existencia = 0;
+            Costo = 0;
+            ValorInventario = 0;
         }
     }
 }

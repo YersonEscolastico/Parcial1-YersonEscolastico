@@ -35,13 +35,15 @@ namespace Parcial1_YersonEscolastico.UI.Registro
 
         private Productos LlenaClase()
         {
-            Productos productos = new Productos();
-            productos.ProductoId = Convert.ToInt32(IDnumericUpDown.Value);
-            productos.Descripcion = DescripciontextBox.Text;
-            productos.Costo = Convert.ToSingle(CostotextBox.Text);
-            productos.Existencia = Convert.ToSingle(ExistenciatextBox.Text);
-            productos.ValorInventario = Convert.ToSingle(ValorInventariotextBox.Text);
-            return productos;
+            Productos producto = new Productos();
+
+            producto.ProductoId = Convert.ToInt32(IDnumericUpDown.Value);
+            producto.Descripcion = DescripciontextBox.Text;
+            producto.Costo = Convert.ToSingle(CostotextBox.Text);
+            producto.Existencia = Convert.ToSingle(ExistenciatextBox.Text);
+            producto.ValorInventario = Convert.ToSingle(ValorInventariotextBox.Text);
+
+            return producto;
         }
 
 
@@ -71,29 +73,30 @@ namespace Parcial1_YersonEscolastico.UI.Registro
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
-             Productos productos;
-             bool paso = false;
-            
+            Productos productos;
+            bool paso = false;
 
             productos = LlenaClase();
             Limpiar();
 
+            //Determinar si es guardar o modificar
             if (IDnumericUpDown.Value == 0)
                 paso = ProductosBLL.Guardar(productos);
             else
             {
                 if (!ExisteEnLaBaseDeDatos())
                 {
-                    MessageBox.Show("No se puede guardar un producto que no existe", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("No se puede modificar una persona que no existe", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 paso = ProductosBLL.Modificar(productos);
             }
 
+            //Informar el resultado
             if (paso)
                 MessageBox.Show("Guardado!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
-                MessageBox.Show("No fue posible guardar!!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No se pudo guardar!!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
 
@@ -101,16 +104,20 @@ namespace Parcial1_YersonEscolastico.UI.Registro
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
             MyErrorProvider.Clear();
-
             int id;
             int.TryParse(IDnumericUpDown.Text, out id);
 
-            Limpiar();
 
+            if (!ExisteEnLaBaseDeDatos())
+                return;
             if (ProductosBLL.Eliminar(id))
+            {
                 MessageBox.Show("Eliminado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Limpiar();
+            }
+
             else
-                MyErrorProvider.SetError(IDnumericUpDown, "No se puede eliminar un usuario que no existe.");
+                MyErrorProvider.SetError(IDnumericUpDown, "No se puede eliminar una persona que no existe");
         }
 
 

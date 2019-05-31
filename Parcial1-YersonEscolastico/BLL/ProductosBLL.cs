@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Parcial1_YersonEscolastico.Entidades;
 using Parcial1_YersonEscolastico.DAL;
 using System.Linq.Expressions;
+using System.Data.Entity;
 
 namespace Parcial1_YersonEscolastico.BLL
 {
@@ -18,7 +19,7 @@ namespace Parcial1_YersonEscolastico.BLL
             Contexto contexto = new Contexto();
             try
             {
-                if (contexto.Producto.Add(productos) != null)
+                if (contexto.Productos.Add(productos) != null)
                     paso = contexto.SaveChanges() > 0;
 
             }
@@ -55,22 +56,26 @@ namespace Parcial1_YersonEscolastico.BLL
         public static bool Eliminar(int id)
         {
             bool paso = false;
-            Contexto contexto = new Contexto();
+            Contexto db = new Contexto();
+
             try
             {
-                var eliminar = contexto.Producto.Find(id);
-                contexto.Entry(eliminar).State = System.Data.Entity.EntityState.Deleted;
-                paso = (contexto.SaveChanges() > 0);
-
+                var eliminar = db.Productos.Find(id);
+                //db.Persona.Remove(eliminar);
+                db.Entry(eliminar).State = EntityState.Deleted;
+                paso = (db.SaveChanges() > 0);
             }
-            catch
+            catch (Exception)
             {
                 throw;
             }
+
             finally
             {
-                contexto.Dispose();
+                db.Dispose();
             }
+
+
             return paso;
         }
 
@@ -82,7 +87,7 @@ namespace Parcial1_YersonEscolastico.BLL
             Productos productos = new Productos();
             try
             {
-                productos = contexto.Producto.Find(id);
+                productos = contexto.Productos.Find(id);
             }
             catch
             {
@@ -103,7 +108,7 @@ namespace Parcial1_YersonEscolastico.BLL
             List<Productos> lista = new List<Productos>();
             try
             {
-                lista = contexto.Producto.Where(productos).ToList();
+                lista = contexto.Productos.Where(productos).ToList();
 
             }
             catch

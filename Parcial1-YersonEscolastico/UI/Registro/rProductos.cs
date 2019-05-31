@@ -111,7 +111,7 @@ namespace Parcial1_YersonEscolastico.UI.Registro
             Productos productos;
             bool paso = false;
 
-            if (Validar())
+            if (!Validar())
                 return;
 
             productos = LlenaClase();

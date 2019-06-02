@@ -33,6 +33,8 @@ namespace Parcial1_YersonEscolastico.BLL
             return paso;
         }
 
+
+
         public static bool Modificar(Inventario inventario)
         {
             bool paso = false;
@@ -53,6 +55,8 @@ namespace Parcial1_YersonEscolastico.BLL
             }
             return paso;
         }
+
+
 
         public static Inventario Buscar(int id)
         {

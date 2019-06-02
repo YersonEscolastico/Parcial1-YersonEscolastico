@@ -37,6 +37,7 @@ namespace Parcial1_YersonEscolastico.BLL
             return paso;
         }
 
+
         public static bool Modificar(Productos producto)
         {
             bool paso = false;
@@ -66,6 +67,7 @@ namespace Parcial1_YersonEscolastico.BLL
         }
 
 
+
         public static bool Eliminar(int id)
         {
             bool paso = false;
@@ -78,7 +80,7 @@ namespace Parcial1_YersonEscolastico.BLL
                 var Inventario = InventarioBLL.Buscar(1);
                 Inventario.Total -= eliminar.ValorInventario;
                 InventarioBLL.Modificar(Inventario);
-                //db.Persona.Remove(eliminar);
+                //db.Producto.Remove(eliminar);
                 db.Entry(eliminar).State = EntityState.Deleted;
                 paso = (db.SaveChanges() > 0);
             }

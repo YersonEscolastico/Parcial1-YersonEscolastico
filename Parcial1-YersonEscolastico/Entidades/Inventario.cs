@@ -20,3 +20,4 @@ namespace Parcial1_YersonEscolastico.Entidades
         }
     }
 }
+

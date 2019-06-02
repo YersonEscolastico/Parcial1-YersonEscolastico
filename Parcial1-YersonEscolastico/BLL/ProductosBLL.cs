@@ -21,7 +21,9 @@ namespace Parcial1_YersonEscolastico.BLL
             {
                 if (contexto.Productos.Add(productos) != null)
                     paso = contexto.SaveChanges() > 0;
-
+                Inventario inventario = InventarioBLL.Buscar(1);
+                inventario.Total += productos.ValorInventario;
+                InventarioBLL.Modificar(inventario);
             }
             catch (Exception)
             {
@@ -35,16 +37,26 @@ namespace Parcial1_YersonEscolastico.BLL
             return paso;
         }
 
-        public static bool Modificar(Productos productos)
+        public static bool Modificar(Productos producto)
         {
             bool paso = false;
-            Contexto db = new Contexto();
 
+            Contexto contexto = new Contexto();
+            Productos pro = ProductosBLL.Buscar(producto.ProductoId);
             try
             {
-                db.Entry(productos).State = System.Data.Entity.EntityState.Modified;
-                paso = (db.SaveChanges() > 0);
-                db.Dispose();
+                double resultado = producto.ValorInventario - pro.ValorInventario;
+
+                Inventario inventario = InventarioBLL.Buscar(1);
+                inventario.Total += resultado;
+                InventarioBLL.Modificar(inventario);
+
+                contexto.Entry(producto).State = EntityState.Modified;
+                if (contexto.SaveChanges() > 0)
+                {
+                    paso = true;
+                }
+                contexto.Dispose();
             }
             catch (Exception)
             {
@@ -52,6 +64,7 @@ namespace Parcial1_YersonEscolastico.BLL
             }
             return paso;
         }
+
 
         public static bool Eliminar(int id)
         {
@@ -61,6 +74,10 @@ namespace Parcial1_YersonEscolastico.BLL
             try
             {
                 var eliminar = db.Productos.Find(id);
+
+                var Inventario = InventarioBLL.Buscar(1);
+                Inventario.Total -= eliminar.ValorInventario;
+                InventarioBLL.Modificar(Inventario);
                 //db.Persona.Remove(eliminar);
                 db.Entry(eliminar).State = EntityState.Deleted;
                 paso = (db.SaveChanges() > 0);

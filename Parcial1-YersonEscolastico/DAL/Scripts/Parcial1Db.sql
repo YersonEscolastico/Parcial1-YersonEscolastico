@@ -1,17 +1,21 @@
-Create database Parcial1Db;
+--Create database Parcial1Db;
 
-go
+--go
 
-use Parcial1Db
+--use Parcial1Db
 
-Create table Productos(
+--Create table Productos(
  
- productoId int primary key identity,
- descripcion varchar(30),
- Existencia float,
- costo float,
- valorInventario float
-)
+-- productoId int primary key identity,
+-- descripcion varchar(30),
+-- Existencia float,
+-- costo float,
+-- valorInventario float
+--)
+
+select * from Productos
+select * from Inventarios
+
 
 
 

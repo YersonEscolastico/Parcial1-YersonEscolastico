@@ -11,7 +11,7 @@ namespace Parcial1_YersonEscolastico.Entidades
     {
         [Key]
         public int Id { get; set; }
-        public float Total { get; set; }
+        public double Total { get; set; }
 
         public Inventario()
         {

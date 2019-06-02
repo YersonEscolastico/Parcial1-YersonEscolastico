@@ -108,33 +108,44 @@ namespace Parcial1_YersonEscolastico.UI.Registro
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
-            Productos productos;
+            Productos producto;
             bool paso = false;
 
             if (!Validar())
-                return;
+                MessageBox.Show("Debe llenar los campos indicados", "Validación",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-            productos = LlenaClase();
-            Limpiar();
+            producto = LlenaClase();
 
-            //Determinar si es guardar o modificar
             if (IDnumericUpDown.Value == 0)
-                paso = ProductosBLL.Guardar(productos);
+            {
+                paso = ProductosBLL.Guardar(producto);
+                MessageBox.Show("Guardado!!", "Exito",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
             else
             {
-                if (!ExisteEnLaBaseDeDatos())
+                int id = Convert.ToInt32(IDnumericUpDown.Value);
+                producto = ProductosBLL.Buscar(id);
+
+                if (producto != null)
                 {
-                    MessageBox.Show("No se puede modificar una persona que no existe", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    paso = ProductosBLL.Modificar(LlenaClase());
+                    MessageBox.Show("Modificado!!", "Exito",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                paso = ProductosBLL.Modificar(productos);
+                else
+                    MessageBox.Show("Id no existe", "Falló",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            //Informar el resultado
             if (paso)
-                MessageBox.Show("Guardado!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            {
+                Limpiar();
+            }
             else
-                MessageBox.Show("No se pudo guardar!!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No se pudo guardar!!", "Falló",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
 

@@ -39,9 +39,9 @@ namespace Parcial1_YersonEscolastico.UI.Registro
 
             producto.ProductoId = Convert.ToInt32(IDnumericUpDown.Value);
             producto.Descripcion = DescripciontextBox.Text;
-            producto.Costo = Convert.ToSingle(CostotextBox.Text);
-            producto.Existencia = Convert.ToSingle(ExistenciatextBox.Text);
-            producto.ValorInventario = Convert.ToSingle(ValorInventariotextBox.Text);
+            producto.Costo = Convert.ToDouble(CostotextBox.Text);
+            producto.Existencia = Convert.ToDouble(ExistenciatextBox.Text);
+            producto.ValorInventario = Convert.ToDouble(ValorInventariotextBox.Text);
 
             return producto;
         }

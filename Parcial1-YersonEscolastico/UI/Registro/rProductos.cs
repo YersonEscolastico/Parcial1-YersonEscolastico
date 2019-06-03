@@ -89,32 +89,6 @@ namespace Parcial1_YersonEscolastico.UI.Registro
             Limpiar();
         }
 
-        public void NoLetras(KeyPressEventArgs e)
-        {
-            try
-            {
-                if (Char.IsNumber(e.KeyChar))
-                {
-                    e.Handled = false;
-                }
-                else if (Char.IsControl(e.KeyChar))
-                {
-                    e.Handled = false;
-                }
-                else if (Char.IsPunctuation(e.KeyChar))
-                {
-                    e.Handled = false;
-                }
-                else
-                {
-                    e.Handled = true;
-                }
-            }
-            catch (Exception)
-            {
-               
-            }
-        }
 
         private bool ExisteEnLaBaseDeDatos()
         {
@@ -213,7 +187,7 @@ namespace Parcial1_YersonEscolastico.UI.Registro
             private void ExistenciatextBox_TextChanged(object sender, EventArgs e)
         {
             if (CostotextBox.Text.Length > 0 && ExistenciatextBox.Text.Length > 0)
-                ValorInventariotextBox.Text = Convert.ToString(Convert.ToInt32(CostotextBox.Text) * Convert.ToInt32(ExistenciatextBox.Text));
+                ValorInventariotextBox.Text = Convert.ToString(Convert.ToDouble(CostotextBox.Text) * Convert.ToDouble(ExistenciatextBox.Text));
 
             if (CostotextBox.Text.Length > 0 && ExistenciatextBox.Text.Length == 0)
                 ValorInventariotextBox.Text = "0";
@@ -230,7 +204,7 @@ namespace Parcial1_YersonEscolastico.UI.Registro
         private void CostotextBox_TextChanged(object sender, EventArgs e)
         {
             if (CostotextBox.Text.Length > 0 && ExistenciatextBox.Text.Length > 0)
-                ValorInventariotextBox.Text = Convert.ToString(Convert.ToInt32(CostotextBox.Text) * Convert.ToInt32(ExistenciatextBox.Text));
+                ValorInventariotextBox.Text = Convert.ToString(Convert.ToDouble(CostotextBox.Text) * Convert.ToDouble(ExistenciatextBox.Text));
 
             if (CostotextBox.Text.Length > 0 && ExistenciatextBox.Text.Length == 0)
                 ValorInventariotextBox.Text = "0";
@@ -245,12 +219,29 @@ namespace Parcial1_YersonEscolastico.UI.Registro
 
         private void ExistenciatextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            NoLetras(e);
+            char ch = e.KeyChar;
+            if (ch == 46 && ExistenciatextBox.Text.IndexOf('.') != -1)
+                e.Handled = true;
+     
+            if(!char.IsDigit(ch) && ch != 8 && ch != 46)
+            {
+                e.Handled = true;
+            }
+            return;
         }
+
 
         private void CostotextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            NoLetras(e);
+            char ch = e.KeyChar;
+            if (ch == 46 && CostotextBox.Text.IndexOf('.') != -1)
+                e.Handled = true;
+
+            if (!char.IsDigit(ch) && ch != 8 && ch != 46)
+            {
+                e.Handled = true;
+            }
+            return;
         }
     }
 }

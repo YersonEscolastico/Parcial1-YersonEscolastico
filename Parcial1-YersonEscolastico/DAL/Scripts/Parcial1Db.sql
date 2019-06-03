@@ -20,7 +20,7 @@
 -- float Total
 --)
 
-
+delete from Inventarios where id=1
 select * from Productos
 select * from Inventarios
 

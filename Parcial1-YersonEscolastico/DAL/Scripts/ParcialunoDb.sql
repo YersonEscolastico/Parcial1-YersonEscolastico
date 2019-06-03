@@ -24,7 +24,8 @@
 select * from Productos
 select * from Inventarios
 
---insert into Inventarios (Id, Total) values ('','0');
+SET IDENTITY_INSERT Inventarios ON
+insert into Inventarios (Id, Total) values ('1','0');
 
 
 

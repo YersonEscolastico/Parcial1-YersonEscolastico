@@ -53,16 +53,15 @@ namespace Parcial1_YersonEscolastico.BLL
                 InventarioBLL.Modificar(inventario);
 
                 contexto.Entry(producto).State = EntityState.Modified;
-                if (contexto.SaveChanges() > 0)
-                {
-                    paso = true;
-                }
-                contexto.Dispose();
+                paso = (contexto.SaveChanges() > 0);
+                
             }
             catch (Exception)
             {
                 throw;
             }
+            finally {contexto.Dispose(); }
+       
             return paso;
         }
 

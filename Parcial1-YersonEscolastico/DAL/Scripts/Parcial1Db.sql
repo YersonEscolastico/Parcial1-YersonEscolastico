@@ -1,4 +1,4 @@
---Create database Parcial1Db;
+--Create database ParcialunoDb;
 
 --go
 
@@ -12,6 +12,14 @@
 -- costo float,
 -- valorInventario float
 --)
+
+
+--Create table Inventario(
+ 
+-- Id int primary key identity,
+-- float Total
+--)
+
 
 select * from Productos
 select * from Inventarios

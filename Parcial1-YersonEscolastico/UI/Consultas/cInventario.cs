@@ -24,7 +24,7 @@ namespace Parcial1_YersonEscolastico.UI.Consultas
             Inventario inventario = InventarioBLL.Buscar(1);
             double TotalInventario;
             TotalInventario = inventario.Total;
-            //TotalTextBox.Text = TotalInventario.ToString();
+            TotalTextBox.Text = TotalInventario.ToString();
         }
     }
 }

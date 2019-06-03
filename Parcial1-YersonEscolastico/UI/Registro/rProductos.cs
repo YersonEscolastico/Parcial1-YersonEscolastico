@@ -139,14 +139,26 @@ namespace Parcial1_YersonEscolastico.UI.Registro
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
+        private bool VEliminar()
+        {
+            bool paso = true;
+            MyErrorProvider.Clear();
 
+            if (IDnumericUpDown.Value == 0)
+            {
+                MyErrorProvider.SetError(IDnumericUpDown, "Debe introducir un id para poder eliminar un producto");
+                IDnumericUpDown.Focus();
+                paso = false;
+            }
+            return paso;
+        }
 
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
             MyErrorProvider.Clear();
+            VEliminar();
             int id;
             int.TryParse(IDnumericUpDown.Text, out id);
-
 
             if (!ExisteEnLaBaseDeDatos())
                 return;
@@ -220,6 +232,13 @@ namespace Parcial1_YersonEscolastico.UI.Registro
         private void ExistenciatextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             char ch = e.KeyChar;
+
+            if (e.KeyChar == '.')
+            {
+               if(ExistenciatextBox.TextLength < 1)
+                    e.Handled = true;
+            }
+ 
             if (ch == 46 && ExistenciatextBox.Text.IndexOf('.') != -1)
                 e.Handled = true;
      
@@ -232,8 +251,15 @@ namespace Parcial1_YersonEscolastico.UI.Registro
 
 
         private void CostotextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
+        { 
             char ch = e.KeyChar;
+
+            if (e.KeyChar == '.')
+            {
+                if (CostotextBox.TextLength < 1)
+                    e.Handled = true;
+            }
+
             if (ch == 46 && CostotextBox.Text.IndexOf('.') != -1)
                 e.Handled = true;
 

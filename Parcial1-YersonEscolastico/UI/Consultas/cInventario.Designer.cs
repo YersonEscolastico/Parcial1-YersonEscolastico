@@ -55,11 +55,14 @@
             // RefrescarButton
             // 
             this.RefrescarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RefrescarButton.Location = new System.Drawing.Point(162, 52);
+            this.RefrescarButton.Image = global::Parcial1_YersonEscolastico.Properties.Resources.redo;
+            this.RefrescarButton.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.RefrescarButton.Location = new System.Drawing.Point(162, 51);
             this.RefrescarButton.Name = "RefrescarButton";
-            this.RefrescarButton.Size = new System.Drawing.Size(75, 29);
+            this.RefrescarButton.Size = new System.Drawing.Size(102, 30);
             this.RefrescarButton.TabIndex = 2;
-            this.RefrescarButton.Text = "Refrescar";
+            this.RefrescarButton.Text = "   Refrescar";
+            this.RefrescarButton.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.RefrescarButton.UseVisualStyleBackColor = true;
             this.RefrescarButton.Click += new System.EventHandler(this.RefrescarButton_Click);
             // 

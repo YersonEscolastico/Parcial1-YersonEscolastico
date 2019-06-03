@@ -16,6 +16,8 @@
 select * from Productos
 select * from Inventarios
 
+--insert into Inventarios (Id, Total) values ('','0');
+
 
 
 

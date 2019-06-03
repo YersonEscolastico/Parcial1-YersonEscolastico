@@ -114,6 +114,8 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="DAL\Scripts\Parcial1Db.sql" />
+    <None Include="Resources\redo.png" />
+    <None Include="Resources\refresh_17814.png" />
     <None Include="Resources\Eliminar.png" />
     <None Include="Resources\Guardar.png" />
     <None Include="Resources\Nuevo.png" />

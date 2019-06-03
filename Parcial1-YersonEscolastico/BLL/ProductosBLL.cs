@@ -79,7 +79,7 @@ namespace Parcial1_YersonEscolastico.BLL
                 var Inventario = InventarioBLL.Buscar(1);
                 Inventario.Total -= eliminar.ValorInventario;
                 InventarioBLL.Modificar(Inventario);
-                //db.Producto.Remove(eliminar);
+
                 db.Entry(eliminar).State = EntityState.Deleted;
                 paso = (db.SaveChanges() > 0);
             }

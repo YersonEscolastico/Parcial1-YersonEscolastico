@@ -22,9 +22,9 @@ namespace Parcial1_YersonEscolastico.UI.Consultas
         private void RefrescarButton_Click(object sender, EventArgs e)
         {
             Inventario inventario = InventarioBLL.Buscar(1);
-            double total;
-            total = inventario.Total;
-            TotalTextBox.Text = total.ToString();
+            double TotalInventario;
+            TotalInventario = inventario.Total;
+            //TotalTextBox.Text = TotalInventario.ToString();
         }
     }
 }

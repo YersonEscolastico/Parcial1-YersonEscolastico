@@ -51,7 +51,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 38);
+            this.label2.Location = new System.Drawing.Point(6, 36);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 13);
             this.label2.TabIndex = 1;
@@ -60,7 +60,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 240);
+            this.label3.Location = new System.Drawing.Point(6, 210);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(81, 13);
             this.label3.TabIndex = 2;
@@ -69,7 +69,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(10, 143);
+            this.label4.Location = new System.Drawing.Point(6, 132);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 13);
             this.label4.TabIndex = 3;
@@ -78,7 +78,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(10, 89);
+            this.label5.Location = new System.Drawing.Point(6, 89);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(63, 13);
             this.label5.TabIndex = 4;
@@ -86,7 +86,7 @@
             // 
             // IDnumericUpDown
             // 
-            this.IDnumericUpDown.Location = new System.Drawing.Point(95, 31);
+            this.IDnumericUpDown.Location = new System.Drawing.Point(88, 29);
             this.IDnumericUpDown.Name = "IDnumericUpDown";
             this.IDnumericUpDown.Size = new System.Drawing.Size(52, 20);
             this.IDnumericUpDown.TabIndex = 5;
@@ -100,7 +100,7 @@
             // 
             // ExistenciatextBox
             // 
-            this.ExistenciatextBox.Location = new System.Drawing.Point(109, 143);
+            this.ExistenciatextBox.Location = new System.Drawing.Point(109, 125);
             this.ExistenciatextBox.Name = "ExistenciatextBox";
             this.ExistenciatextBox.Size = new System.Drawing.Size(100, 20);
             this.ExistenciatextBox.TabIndex = 7;
@@ -108,7 +108,7 @@
             // 
             // ValorInventariotextBox
             // 
-            this.ValorInventariotextBox.Location = new System.Drawing.Point(109, 233);
+            this.ValorInventariotextBox.Location = new System.Drawing.Point(109, 203);
             this.ValorInventariotextBox.Name = "ValorInventariotextBox";
             this.ValorInventariotextBox.ReadOnly = true;
             this.ValorInventariotextBox.Size = new System.Drawing.Size(100, 20);
@@ -117,7 +117,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 180);
+            this.label1.Location = new System.Drawing.Point(6, 171);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(34, 13);
             this.label1.TabIndex = 13;
@@ -125,7 +125,7 @@
             // 
             // CostotextBox
             // 
-            this.CostotextBox.Location = new System.Drawing.Point(110, 181);
+            this.CostotextBox.Location = new System.Drawing.Point(109, 164);
             this.CostotextBox.Name = "CostotextBox";
             this.CostotextBox.Size = new System.Drawing.Size(100, 20);
             this.CostotextBox.TabIndex = 14;
@@ -139,7 +139,7 @@
             // 
             this.Eliminarbutton.Image = global::Parcial1_YersonEscolastico.Properties.Resources.Eliminar;
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Eliminarbutton.Location = new System.Drawing.Point(234, 319);
+            this.Eliminarbutton.Location = new System.Drawing.Point(234, 263);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(75, 51);
             this.Eliminarbutton.TabIndex = 12;
@@ -152,7 +152,7 @@
             // 
             this.Guardarbutton.Image = global::Parcial1_YersonEscolastico.Properties.Resources.Guardar;
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Guardarbutton.Location = new System.Drawing.Point(121, 319);
+            this.Guardarbutton.Location = new System.Drawing.Point(119, 263);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(75, 51);
             this.Guardarbutton.TabIndex = 11;
@@ -165,7 +165,7 @@
             // 
             this.Nuevobutton.Image = global::Parcial1_YersonEscolastico.Properties.Resources.Nuevo;
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Nuevobutton.Location = new System.Drawing.Point(9, 319);
+            this.Nuevobutton.Location = new System.Drawing.Point(9, 263);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(75, 51);
             this.Nuevobutton.TabIndex = 10;
@@ -191,7 +191,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(321, 382);
+            this.ClientSize = new System.Drawing.Size(321, 323);
             this.Controls.Add(this.CostotextBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Eliminarbutton);

@@ -113,7 +113,6 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="DAL\Scripts\ParcialunossDb.sql" />
     <None Include="Resources\Actualizat.png" />
     <None Include="Resources\redo.png" />
     <None Include="Resources\refresh_17814.png" />
@@ -121,6 +120,9 @@
     <None Include="Resources\Guardar.png" />
     <None Include="Resources\Nuevo.png" />
     <None Include="Resources\Buscar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DAL\Scripts\ParcialunoDb.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

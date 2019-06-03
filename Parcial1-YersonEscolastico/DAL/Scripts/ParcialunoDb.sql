@@ -1,34 +1,29 @@
---Create database ParcialunoDb;
+Create database ParcialunoDb;
 
---go
+go
 
---use Parcial1Db
+use ParcialunoDb
 
---Create table Productos(
+Create table Productos(
  
--- productoId int primary key identity,
--- descripcion varchar(30),
--- Existencia float,
--- costo float,
--- valorInventario float
---)
+productoId int primary key identity,
+ descripcion varchar(30),
+Existencia float,
+ costo float,
+ valorInventario float
+)
 
 
---Create table Inventario(
+Create table Inventario(
  
--- Id int primary key identity,
--- float Total
---)
-
-
+Id int primary key identity,
+Total float
+)
+--delete from Inventarios where id=1
 select * from Productos
-select * from Inventarios
+--select * from Inventarios
 
 SET IDENTITY_INSERT Inventarios ON
 insert into Inventarios (Id, Total) values ('1','0');
-
-
-
-
 
 

@@ -113,7 +113,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="DAL\Scripts\Parcial1Db.sql" />
+    <Content Include="DAL\Scripts\ParcialunossDb.sql" />
     <None Include="Resources\Actualizat.png" />
     <None Include="Resources\redo.png" />
     <None Include="Resources\refresh_17814.png" />

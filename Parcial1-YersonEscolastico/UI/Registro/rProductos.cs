@@ -157,7 +157,7 @@ namespace Parcial1_YersonEscolastico.UI.Registro
             }
 
             else
-                MyErrorProvider.SetError(IDnumericUpDown, "No se puede eliminar una persona que no existe");
+                MyErrorProvider.SetError(IDnumericUpDown, "No se puede eliminar un producto que no existe");
         }
 
 
@@ -174,12 +174,12 @@ namespace Parcial1_YersonEscolastico.UI.Registro
 
             if (productos != null)
             {
-                MessageBox.Show("Usuario Encontrado");
+                MessageBox.Show("Producto Encontrado");
                 LlenaCampo(productos);
             }
             else
             {
-                MessageBox.Show("Usuario no Encontada");
+                MessageBox.Show("Producto no Encontado");
             }
         }
 

@@ -89,6 +89,32 @@ namespace Parcial1_YersonEscolastico.UI.Registro
             Limpiar();
         }
 
+        public void NoLetras(KeyPressEventArgs e)
+        {
+            try
+            {
+                if (Char.IsNumber(e.KeyChar))
+                {
+                    e.Handled = false;
+                }
+                else if (Char.IsControl(e.KeyChar))
+                {
+                    e.Handled = false;
+                }
+                else if (Char.IsPunctuation(e.KeyChar))
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+            }
+            catch (Exception)
+            {
+               
+            }
+        }
 
         private bool ExisteEnLaBaseDeDatos()
         {
@@ -215,6 +241,16 @@ namespace Parcial1_YersonEscolastico.UI.Registro
             if (CostotextBox.Text.Length == 0 && ExistenciatextBox.Text.Length == 0)
                 ValorInventariotextBox.Text = "0";
 
+        }
+
+        private void ExistenciatextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            NoLetras(e);
+        }
+
+        private void CostotextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            NoLetras(e);
         }
     }
 }

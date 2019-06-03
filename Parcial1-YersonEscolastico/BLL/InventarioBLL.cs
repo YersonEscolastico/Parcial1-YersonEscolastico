@@ -21,8 +21,8 @@ namespace Parcial1_YersonEscolastico.BLL
             {
                 if (contexto.Inventario.Add(inventario) != null)
                 {
-                    contexto.SaveChanges();
-                    paso = true;
+                   paso = contexto.SaveChanges() >0;
+                   
                 }
                 contexto.Dispose();
             }
@@ -43,10 +43,8 @@ namespace Parcial1_YersonEscolastico.BLL
             try
             {
                 contexto.Entry(inventario).State = EntityState.Modified;
-                if (contexto.SaveChanges() > 0)
-                {
-                    paso = true;
-                }
+                paso = (contexto.SaveChanges() > 0);
+               
                 contexto.Dispose();
             }
             catch (Exception)

@@ -62,19 +62,19 @@ namespace Parcial1_YersonEscolastico.UI.Registro
             bool paso = true;
             MyErrorProvider.Clear();
 
-            if (DescripciontextBox.Text == string.Empty)
+            if (String.IsNullOrWhiteSpace(DescripciontextBox.Text.Trim()))
             {
                 MyErrorProvider.SetError(DescripciontextBox, "Este campo no puede estar vacio");
                 DescripciontextBox.Focus();
                 paso = false;
             }
-            if (ExistenciatextBox.Text == string.Empty)
+            if (String.IsNullOrWhiteSpace(ExistenciatextBox.Text))
             {
                 MyErrorProvider.SetError(ExistenciatextBox, "Este campo no puede estar vacio");
                 ExistenciatextBox.Focus();
                 paso = false;
             }
-            if (CostotextBox.Text == string.Empty)
+            if (String.IsNullOrWhiteSpace(CostotextBox.Text))
             {
                 MyErrorProvider.SetError(CostotextBox, "Este campo no puede estar vacio");
                 CostotextBox.Focus();

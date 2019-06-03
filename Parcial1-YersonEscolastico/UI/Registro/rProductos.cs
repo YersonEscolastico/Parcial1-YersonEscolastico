@@ -80,14 +80,6 @@ namespace Parcial1_YersonEscolastico.UI.Registro
                 CostotextBox.Focus();
                 paso = false;
             }
-
-            if (ValorInventariotextBox.Text == string.Empty)
-            {
-                MyErrorProvider.SetError(ValorInventariotextBox, "Este campo no puede estar vacio");
-                ValorInventariotextBox.Focus();
-                paso = false;
-            }
-
             return paso;
         }
 
@@ -112,8 +104,7 @@ namespace Parcial1_YersonEscolastico.UI.Registro
             bool paso = false;
 
             if (!Validar())
-                MessageBox.Show("Debe llenar los campos indicados", "Validación",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
 
             producto = LlenaClase();
 

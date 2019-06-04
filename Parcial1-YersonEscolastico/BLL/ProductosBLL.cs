@@ -13,17 +13,35 @@ namespace Parcial1_YersonEscolastico.BLL
     class ProductosBLL
     {
 
+        public static Inventario LlenaClase()
+        {
+            Inventario inventario = new Inventario();
+            inventario.Total = 0;
+            inventario.Id = 1;
+
+            return inventario;
+        }
         public static bool Guardar(Productos productos)
         {
             bool paso = false;
             Contexto contexto = new Contexto();
+            Inventario inventario = new Inventario();
             try
             {
+                inventario = InventarioBLL.Buscar(1);
+                if (inventario == null)
+                {
+
+                    inventario = LlenaClase();
+                    paso = InventarioBLL.Guardar(inventario);
+
+                }
+
                 if (contexto.Productos.Add(productos) != null)
                     paso = contexto.SaveChanges() > 0;
-                 Inventario inventario = InventarioBLL.Buscar(1);
+
                 inventario.Total += productos.ValorInventario;
-                 InventarioBLL.Modificar(inventario);
+                InventarioBLL.Modificar(inventario);
             }
             catch (Exception)
             {

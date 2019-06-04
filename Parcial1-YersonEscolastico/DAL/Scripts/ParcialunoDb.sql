@@ -1,4 +1,4 @@
-Create database ParcialunoDb;
+/*Create database ParcialunoDb;
 
 go
 
@@ -25,5 +25,12 @@ select * from Productos
 
 SET IDENTITY_INSERT Inventarios ON
 insert into Inventarios (Id, Total) values ('1','0');
+
+SET IDENTITY_INSERT Ubicacions ON
+*/
+SET IDENTITY_INSERT Inventarios ON
+insert into Inventarios(Id, Total) values ('1','0');
+
+
 
 

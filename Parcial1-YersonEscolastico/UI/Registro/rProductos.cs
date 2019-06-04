@@ -19,6 +19,7 @@ namespace Parcial1_YersonEscolastico.UI.Registro
         public rProductos()
         {
             InitializeComponent();
+            LlenarComboBox();
         }
 
 
@@ -139,7 +140,8 @@ namespace Parcial1_YersonEscolastico.UI.Registro
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        private bool VEliminar()
+
+         private bool VEliminar()
         {
             bool paso = true;
             MyErrorProvider.Clear();
@@ -268,6 +270,22 @@ namespace Parcial1_YersonEscolastico.UI.Registro
                 e.Handled = true;
             }
             return;
+        }
+
+
+        private void LlenarComboBox()
+        {
+            var listado = new List<Ubicacion>();
+            listado = UbicacionBLL.getList(p => true);
+            ubicacioncomboBox.DataSource = listado;
+            ubicacioncomboBox.DisplayMember = "Descripcion";
+            ubicacioncomboBox.ValueMember = "Id";
+        }
+
+        private void MasButton_Click(object sender, EventArgs e)
+        {
+            rUbicacion ub = new rUbicacion();
+            ub.ShowDialog();
         }
     }
 }

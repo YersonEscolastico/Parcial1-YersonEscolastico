@@ -44,6 +44,9 @@
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.ubicacioncomboBox = new System.Windows.Forms.ComboBox();
+            this.masButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
             this.SuspendLayout();
@@ -60,7 +63,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 210);
+            this.label3.Location = new System.Drawing.Point(6, 171);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(81, 13);
             this.label3.TabIndex = 2;
@@ -69,7 +72,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 132);
+            this.label4.Location = new System.Drawing.Point(6, 115);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 13);
             this.label4.TabIndex = 3;
@@ -100,7 +103,7 @@
             // 
             // ExistenciatextBox
             // 
-            this.ExistenciatextBox.Location = new System.Drawing.Point(109, 125);
+            this.ExistenciatextBox.Location = new System.Drawing.Point(109, 108);
             this.ExistenciatextBox.Name = "ExistenciatextBox";
             this.ExistenciatextBox.Size = new System.Drawing.Size(100, 20);
             this.ExistenciatextBox.TabIndex = 7;
@@ -109,7 +112,7 @@
             // 
             // ValorInventariotextBox
             // 
-            this.ValorInventariotextBox.Location = new System.Drawing.Point(109, 203);
+            this.ValorInventariotextBox.Location = new System.Drawing.Point(109, 164);
             this.ValorInventariotextBox.Name = "ValorInventariotextBox";
             this.ValorInventariotextBox.ReadOnly = true;
             this.ValorInventariotextBox.Size = new System.Drawing.Size(100, 20);
@@ -118,7 +121,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 171);
+            this.label1.Location = new System.Drawing.Point(6, 141);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(34, 13);
             this.label1.TabIndex = 13;
@@ -126,7 +129,7 @@
             // 
             // CostotextBox
             // 
-            this.CostotextBox.Location = new System.Drawing.Point(109, 164);
+            this.CostotextBox.Location = new System.Drawing.Point(109, 134);
             this.CostotextBox.Name = "CostotextBox";
             this.CostotextBox.Size = new System.Drawing.Size(100, 20);
             this.CostotextBox.TabIndex = 14;
@@ -189,11 +192,41 @@
             this.Buscarbutton.UseVisualStyleBackColor = true;
             this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 200);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(55, 13);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Ubicacion";
+            // 
+            // ubicacioncomboBox
+            // 
+            this.ubicacioncomboBox.FormattingEnabled = true;
+            this.ubicacioncomboBox.Location = new System.Drawing.Point(109, 200);
+            this.ubicacioncomboBox.Name = "ubicacioncomboBox";
+            this.ubicacioncomboBox.Size = new System.Drawing.Size(100, 21);
+            this.ubicacioncomboBox.TabIndex = 16;
+            // 
+            // masButton
+            // 
+            this.masButton.Location = new System.Drawing.Point(215, 200);
+            this.masButton.Name = "masButton";
+            this.masButton.Size = new System.Drawing.Size(35, 23);
+            this.masButton.TabIndex = 17;
+            this.masButton.Text = "Mas";
+            this.masButton.UseVisualStyleBackColor = true;
+            this.masButton.Click += new System.EventHandler(this.MasButton_Click);
+            // 
             // rProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(321, 323);
+            this.Controls.Add(this.masButton);
+            this.Controls.Add(this.ubicacioncomboBox);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.CostotextBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Eliminarbutton);
@@ -234,5 +267,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox CostotextBox;
         private System.Windows.Forms.ErrorProvider MyErrorProvider;
+        private System.Windows.Forms.Button masButton;
+        private System.Windows.Forms.ComboBox ubicacioncomboBox;
+        private System.Windows.Forms.Label label6;
     }
 }

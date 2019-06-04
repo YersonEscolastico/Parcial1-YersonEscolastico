@@ -12,7 +12,8 @@ namespace Parcial1_YersonEscolastico.DAL
     public class Contexto: DbContext
     {
         public DbSet<Productos> Productos { get; set; }
-        public DbSet<Inventario> Inventario { get; set; }
+        public DbSet<Inventario> Inventario { get; set;}
+        public DbSet<Ubicacion> ubicacion { get; set; }
 
         public Contexto() : base("ConStr")
         { }

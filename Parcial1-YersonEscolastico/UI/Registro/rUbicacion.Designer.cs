@@ -71,7 +71,7 @@
             // 
             this.DescripciontextBox.Location = new System.Drawing.Point(94, 60);
             this.DescripciontextBox.Name = "DescripciontextBox";
-            this.DescripciontextBox.Size = new System.Drawing.Size(151, 20);
+            this.DescripciontextBox.Size = new System.Drawing.Size(141, 20);
             this.DescripciontextBox.TabIndex = 3;
             // 
             // MyErrorProvider
@@ -84,9 +84,9 @@
             this.BuscarButton.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.BuscarButton.Location = new System.Drawing.Point(157, 5);
             this.BuscarButton.Name = "BuscarButton";
-            this.BuscarButton.Size = new System.Drawing.Size(88, 37);
+            this.BuscarButton.Size = new System.Drawing.Size(78, 37);
             this.BuscarButton.TabIndex = 7;
-            this.BuscarButton.Text = "Buscar";
+            this.BuscarButton.Text = "         Buscar";
             this.BuscarButton.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.BuscarButton.UseVisualStyleBackColor = true;
             this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
@@ -95,7 +95,7 @@
             // 
             this.Eliminarbutton.Image = global::Parcial1_YersonEscolastico.Properties.Resources.Eliminar1;
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Eliminarbutton.Location = new System.Drawing.Point(184, 126);
+            this.Eliminarbutton.Location = new System.Drawing.Point(174, 126);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(61, 54);
             this.Eliminarbutton.TabIndex = 6;
@@ -134,7 +134,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(259, 187);
+            this.ClientSize = new System.Drawing.Size(248, 187);
             this.Controls.Add(this.BuscarButton);
             this.Controls.Add(this.Eliminarbutton);
             this.Controls.Add(this.Guardarbutton);

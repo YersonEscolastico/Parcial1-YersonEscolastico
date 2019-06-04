@@ -73,8 +73,9 @@ namespace Parcial1_YersonEscolastico.BLL
             }
             return paso;
         }
-   
 
+
+     
 
         public static Ubicaciones Buscar(int id)
         {

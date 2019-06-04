@@ -10,7 +10,7 @@ using System.Data.Entity;
 
 namespace Parcial1_YersonEscolastico.BLL
 {
-    class ProductosBLL
+    public class ProductosBLL
     {
 
         public static Inventarios LlenaClase()
@@ -21,6 +21,8 @@ namespace Parcial1_YersonEscolastico.BLL
 
             return inventario;
         }
+
+
         public static bool Guardar(Productos productos)
         {
             bool paso = false;
@@ -56,6 +58,8 @@ namespace Parcial1_YersonEscolastico.BLL
         }
 
 
+
+
         public static bool Modificar(Productos producto)
         {
             bool paso = false;
@@ -85,6 +89,7 @@ namespace Parcial1_YersonEscolastico.BLL
 
 
 
+
         public static bool Eliminar(int id)
         {
             bool paso = false;
@@ -110,8 +115,6 @@ namespace Parcial1_YersonEscolastico.BLL
             {
                 db.Dispose();
             }
-
-
             return paso;
         }
 
@@ -136,6 +139,8 @@ namespace Parcial1_YersonEscolastico.BLL
             }
             return productos;
         }
+
+
 
 
         public static List<Productos> GetList(Expression<Func<Productos, bool>> productos)

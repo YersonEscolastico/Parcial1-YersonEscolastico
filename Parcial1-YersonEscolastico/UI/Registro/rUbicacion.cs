@@ -34,6 +34,7 @@ namespace Parcial1_YersonEscolastico.UI.Registro
             Limpiar();
         }
 
+
         private Ubicaciones LlenaClase()
         {
             Ubicaciones ubicacion = new Ubicaciones();
@@ -44,11 +45,13 @@ namespace Parcial1_YersonEscolastico.UI.Registro
             return ubicacion;
         }
 
+
         private void LlenaCampo(Ubicaciones ubicacion)
         {
             IdnumericUpDown.Value = ubicacion.Id;
             DescripciontextBox.Text = ubicacion.Descripcion;
         }
+
 
         private bool Validar()
         {
@@ -119,6 +122,7 @@ namespace Parcial1_YersonEscolastico.UI.Registro
                 MessageBox.Show("No se pudo guardar!!", "Falló",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+
 
 
         private void BuscarButton_Click(object sender, EventArgs e)

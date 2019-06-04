@@ -14,9 +14,9 @@ namespace Parcial1_YersonEscolastico.Entidades
         public string Descripcion { get; set; }
 
     public Ubicaciones()
-        {
-            Id = 0;
-            Descripcion = string.Empty;
+    {
+        Id = 0;
+        Descripcion = string.Empty;
         }
     }
 }

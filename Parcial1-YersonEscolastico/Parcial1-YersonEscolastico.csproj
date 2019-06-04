@@ -134,6 +134,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DAL\Scripts\ParcialunoDb.sql" />
+    <None Include="Resources\Eliminar1.png" />
     <None Include="Resources\Guardar1.png" />
     <None Include="Resources\Nuevo1.png" />
   </ItemGroup>

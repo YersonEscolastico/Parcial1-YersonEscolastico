@@ -34,6 +34,12 @@ namespace Parcial1_YersonEscolastico.UI.Registro
         }
 
 
+        private void Nuevobutton_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
+
+
         private Productos LlenaClase()
         {
             Productos producto = new Productos();
@@ -82,12 +88,6 @@ namespace Parcial1_YersonEscolastico.UI.Registro
                 paso = false;
             }
             return paso;
-        }
-
-
-            private void Nuevobutton_Click(object sender, EventArgs e)
-        {
-            Limpiar();
         }
 
 
@@ -141,6 +141,7 @@ namespace Parcial1_YersonEscolastico.UI.Registro
         }
 
 
+
          private bool VEliminar()
         {
             bool paso = true;
@@ -154,6 +155,8 @@ namespace Parcial1_YersonEscolastico.UI.Registro
             }
             return paso;
         }
+
+
 
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
@@ -231,6 +234,7 @@ namespace Parcial1_YersonEscolastico.UI.Registro
 
         }
 
+
         private void ExistenciatextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             char ch = e.KeyChar;
@@ -250,6 +254,7 @@ namespace Parcial1_YersonEscolastico.UI.Registro
             }
             return;
         }
+
 
 
         private void CostotextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -273,6 +278,7 @@ namespace Parcial1_YersonEscolastico.UI.Registro
         }
 
 
+
         private void LlenarComboBox()
         {
             var listado = new List<Ubicaciones>();
@@ -281,6 +287,7 @@ namespace Parcial1_YersonEscolastico.UI.Registro
             ubicacioncomboBox.DisplayMember = "Descripcion";
             ubicacioncomboBox.ValueMember = "Id";
         }
+
 
         private void MasButton_Click(object sender, EventArgs e)
         {

@@ -52,7 +52,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 29);
+            this.label1.Location = new System.Drawing.Point(9, 29);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(18, 13);
             this.label1.TabIndex = 1;
@@ -61,7 +61,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 67);
+            this.label2.Location = new System.Drawing.Point(9, 67);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 13);
             this.label2.TabIndex = 2;
@@ -71,7 +71,7 @@
             // 
             this.DescripciontextBox.Location = new System.Drawing.Point(94, 60);
             this.DescripciontextBox.Name = "DescripciontextBox";
-            this.DescripciontextBox.Size = new System.Drawing.Size(85, 20);
+            this.DescripciontextBox.Size = new System.Drawing.Size(151, 20);
             this.DescripciontextBox.TabIndex = 3;
             // 
             // MyErrorProvider
@@ -80,11 +80,14 @@
             // 
             // BuscarButton
             // 
-            this.BuscarButton.Location = new System.Drawing.Point(162, 12);
+            this.BuscarButton.Image = global::Parcial1_YersonEscolastico.Properties.Resources.Buscar1;
+            this.BuscarButton.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.BuscarButton.Location = new System.Drawing.Point(157, 5);
             this.BuscarButton.Name = "BuscarButton";
-            this.BuscarButton.Size = new System.Drawing.Size(75, 30);
+            this.BuscarButton.Size = new System.Drawing.Size(88, 37);
             this.BuscarButton.TabIndex = 7;
             this.BuscarButton.Text = "Buscar";
+            this.BuscarButton.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.BuscarButton.UseVisualStyleBackColor = true;
             this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
             // 
@@ -92,7 +95,7 @@
             // 
             this.Eliminarbutton.Image = global::Parcial1_YersonEscolastico.Properties.Resources.Eliminar1;
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Eliminarbutton.Location = new System.Drawing.Point(176, 126);
+            this.Eliminarbutton.Location = new System.Drawing.Point(184, 126);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(61, 54);
             this.Eliminarbutton.TabIndex = 6;
@@ -131,7 +134,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(249, 196);
+            this.ClientSize = new System.Drawing.Size(259, 187);
             this.Controls.Add(this.BuscarButton);
             this.Controls.Add(this.Eliminarbutton);
             this.Controls.Add(this.Guardarbutton);

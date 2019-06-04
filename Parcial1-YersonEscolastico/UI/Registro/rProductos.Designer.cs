@@ -100,7 +100,7 @@
             // 
             this.DescripciontextBox.Location = new System.Drawing.Point(109, 82);
             this.DescripciontextBox.Name = "DescripciontextBox";
-            this.DescripciontextBox.Size = new System.Drawing.Size(204, 20);
+            this.DescripciontextBox.Size = new System.Drawing.Size(173, 20);
             this.DescripciontextBox.TabIndex = 6;
             // 
             // ValorInventariotextBox
@@ -205,7 +205,13 @@
             // 
             // ExistenciaNumericUpDown
             // 
+            this.ExistenciaNumericUpDown.DecimalPlaces = 1;
             this.ExistenciaNumericUpDown.Location = new System.Drawing.Point(109, 113);
+            this.ExistenciaNumericUpDown.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
             this.ExistenciaNumericUpDown.Name = "ExistenciaNumericUpDown";
             this.ExistenciaNumericUpDown.Size = new System.Drawing.Size(100, 20);
             this.ExistenciaNumericUpDown.TabIndex = 18;
@@ -213,7 +219,13 @@
             // 
             // CostoumericUpDown
             // 
+            this.CostoumericUpDown.DecimalPlaces = 1;
             this.CostoumericUpDown.Location = new System.Drawing.Point(109, 146);
+            this.CostoumericUpDown.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
             this.CostoumericUpDown.Name = "CostoumericUpDown";
             this.CostoumericUpDown.Size = new System.Drawing.Size(100, 20);
             this.CostoumericUpDown.TabIndex = 19;

@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Parcial1_YersonEscolastico.BLL;
 using System.Text.RegularExpressions;
+using Parcial1_YersonEscolastico.DAL;
 
 namespace Parcial1_YersonEscolastico.UI.Registro
 {
@@ -74,6 +75,12 @@ namespace Parcial1_YersonEscolastico.UI.Registro
                 DescripciontextBox.Focus();
                 paso = false;
             }
+            if (RepetidosNo(DescripciontextBox.Text))
+            {
+                MessageBox.Show("Ya existe un producto con ese nombre");
+                DescripciontextBox.Focus();
+                paso = false;
+            }
             if (CostoumericUpDown.Value == 0)
             {
                 MyErrorProvider.SetError(CostoumericUpDown, "Este campo no bebe ser 0");
@@ -101,48 +108,58 @@ namespace Parcial1_YersonEscolastico.UI.Registro
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
-            Productos producto;
+            Productos productos;
             bool paso = false;
 
             if (!Validar())
                 return;
 
-            producto = LlenaClase();
+            productos = LlenaClase();
+
 
             if (IDnumericUpDown.Value == 0)
             {
-                paso = ProductosBLL.Guardar(producto);
-                MessageBox.Show("Guardado!!", "Exito",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                paso = ProductosBLL.Guardar(productos);
             }
             else
             {
-                int id = Convert.ToInt32(IDnumericUpDown.Value);
-                producto = ProductosBLL.Buscar(id);
-
-                if (producto != null)
+                if (!ExisteEnLaBaseDeDatos())
                 {
-                    paso = ProductosBLL.Modificar(LlenaClase());
-                    MessageBox.Show("Modificado!!", "Exito",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("No se puede modificar una ubicacion que no existe", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
-                else
-                    MessageBox.Show("Id no existe", "Falló",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                paso = ProductosBLL.Modificar(productos);
 
-            if (paso)
-            {
-                Limpiar();
             }
-            else
-                MessageBox.Show("No se pudo guardar!!", "Falló",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (paso)
+                    MessageBox.Show("Guardado!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else
+                    MessageBox.Show("No fue posible guardar!!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Limpiar();
+        }
+
+
+        public static bool RepetidosNo(string descripcion)
+        {
+            bool paso = false;
+            Contexto db = new Contexto();
+            try
+            {
+                if (db.Productos.Any(p => p.Descripcion.Equals(descripcion)))
+                {
+                    paso = true;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return paso;
         }
 
 
 
-         private bool VEliminar()
+        private bool VEliminar()
         {
             bool paso = true;
             MyErrorProvider.Clear();

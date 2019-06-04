@@ -158,7 +158,6 @@ namespace Parcial1_YersonEscolastico.UI.Registro
         }
 
 
-
         private bool VEliminar()
         {
             bool paso = true;

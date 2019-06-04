@@ -82,6 +82,7 @@
             this.Eliminarbutton.TabIndex = 6;
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.UseVisualStyleBackColor = true;
+            this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click_1);
             // 
             // MyErrorProvider
             // 

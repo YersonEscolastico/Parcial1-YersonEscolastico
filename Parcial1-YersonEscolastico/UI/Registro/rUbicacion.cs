@@ -150,23 +150,22 @@ namespace Parcial1_YersonEscolastico.UI.Registro
         }
 
 
-        private void Eliminarbutton_Click(object sender, EventArgs e)
-        {
-           
-                MyErrorProvider.Clear();
-                VEliminar();
-                int id;
-                int.TryParse(IdnumericUpDown.Text, out id);
-                Limpiar();
-                if (UbicacionesBLL.Eliminar(id))
-                {
-                    MessageBox.Show("Eliminado");
-                }
-                else
-                {
-                    MyErrorProvider.SetError(IdnumericUpDown, "No se puede elimina, porque no existe");
-                }
 
+        private void Eliminarbutton_Click_1(object sender, EventArgs e)
+        {
+            MyErrorProvider.Clear();
+            VEliminar();
+            int id;
+            int.TryParse(IdnumericUpDown.Text, out id);
+            Limpiar();
+            if (UbicacionesBLL.Eliminar(id))
+            {
+                MessageBox.Show("Eliminado");
             }
+            else
+            {
+                MyErrorProvider.SetError(IdnumericUpDown, "No se puede elimina, porque no existe");
+            }
+        }
     }
 }

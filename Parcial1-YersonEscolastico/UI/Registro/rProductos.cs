@@ -275,8 +275,8 @@ namespace Parcial1_YersonEscolastico.UI.Registro
 
         private void LlenarComboBox()
         {
-            var listado = new List<Ubicacion>();
-            listado = UbicacionBLL.getList(p => true);
+            var listado = new List<Ubicaciones>();
+            listado = UbicacionesBLL.getList(p => true);
             ubicacioncomboBox.DataSource = listado;
             ubicacioncomboBox.DisplayMember = "Descripcion";
             ubicacioncomboBox.ValueMember = "Id";

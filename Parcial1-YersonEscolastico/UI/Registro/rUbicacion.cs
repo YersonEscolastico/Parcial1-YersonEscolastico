@@ -34,9 +34,9 @@ namespace Parcial1_YersonEscolastico.UI.Registro
             Limpiar();
         }
 
-        private Ubicacion LlenaClase()
+        private Ubicaciones LlenaClase()
         {
-            Ubicacion ubicacion = new Ubicacion();
+            Ubicaciones ubicacion = new Ubicaciones();
 
             ubicacion.Id = Convert.ToInt32(IdnumericUpDown.Value);
             ubicacion.Descripcion = DescripciontextBox.Text;
@@ -44,7 +44,7 @@ namespace Parcial1_YersonEscolastico.UI.Registro
             return ubicacion;
         }
 
-        private void LlenaCampo(Ubicacion ubicacion)
+        private void LlenaCampo(Ubicaciones ubicacion)
         {
             IdnumericUpDown.Value = ubicacion.Id;
             DescripciontextBox.Text = ubicacion.Descripcion;
@@ -82,7 +82,7 @@ namespace Parcial1_YersonEscolastico.UI.Registro
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
-            Ubicacion ubicacion;
+            Ubicaciones ubicacion;
             bool paso = false;
 
             if (!Validar())
@@ -92,18 +92,18 @@ namespace Parcial1_YersonEscolastico.UI.Registro
 
             if (IdnumericUpDown.Value == 0)
             {
-                paso =UbicacionBLL .Guardar(ubicacion);
+                paso =UbicacionesBLL .Guardar(ubicacion);
                 MessageBox.Show("Guardado!!", "Exito",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
                 int id = Convert.ToInt32(IdnumericUpDown.Value);
-                ubicacion= UbicacionBLL.Buscar(id);
+                ubicacion= UbicacionesBLL.Buscar(id);
 
                 if (ubicacion != null)
                 {
-                    paso = UbicacionBLL.Modificar(LlenaClase());
+                    paso = UbicacionesBLL.Modificar(LlenaClase());
                     MessageBox.Show("Modificado!!", "Exito",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -124,12 +124,12 @@ namespace Parcial1_YersonEscolastico.UI.Registro
         private void BuscarButton_Click(object sender, EventArgs e)
         {
             int id;
-            Ubicacion ubicacion = new Ubicacion();
+            Ubicaciones ubicacion = new Ubicaciones();
             int.TryParse(IdnumericUpDown.Text, out id);
 
             Limpiar();
 
-            ubicacion= UbicacionBLL.Buscar(id);
+            ubicacion= UbicacionesBLL.Buscar(id);
 
             if (ubicacion != null)
             {
@@ -144,7 +144,7 @@ namespace Parcial1_YersonEscolastico.UI.Registro
 
         private bool ExisteEnLaBaseDeDatos()
         {
-           Ubicacion ubicacion = UbicacionBLL.Buscar((int)IdnumericUpDown.Value);
+           Ubicaciones ubicacion = UbicacionesBLL.Buscar((int)IdnumericUpDown.Value);
 
             return (ubicacion != null);
         }
@@ -158,7 +158,7 @@ namespace Parcial1_YersonEscolastico.UI.Registro
                 int id;
                 int.TryParse(IdnumericUpDown.Text, out id);
                 Limpiar();
-                if (UbicacionBLL.Eliminar(id))
+                if (UbicacionesBLL.Eliminar(id))
                 {
                     MessageBox.Show("Eliminado");
                 }

@@ -9,9 +9,9 @@ using System.Linq.Expressions;
 using System.Data.Entity;
 namespace Parcial1_YersonEscolastico.BLL
 {
-    public class UbicacionBLL
+    public class UbicacionesBLL
     {
-        public static bool Guardar(Ubicacion ubicacion)
+        public static bool Guardar(Ubicaciones ubicacion)
         {
             bool paso = false;
             Contexto contexto = new Contexto();
@@ -31,7 +31,7 @@ namespace Parcial1_YersonEscolastico.BLL
 
 
 
-        public static bool Modificar(Ubicacion ubicacion)
+        public static bool Modificar(Ubicaciones ubicacion)
         {
             bool paso = false;
             Contexto contexto = new Contexto();
@@ -76,9 +76,9 @@ namespace Parcial1_YersonEscolastico.BLL
    
 
 
-        public static Ubicacion Buscar(int id)
+        public static Ubicaciones Buscar(int id)
         {
-            Ubicacion ubicaciones = new Ubicacion();
+            Ubicaciones ubicaciones = new Ubicaciones();
             Contexto contexto = new Contexto();
             try
             {
@@ -98,9 +98,9 @@ namespace Parcial1_YersonEscolastico.BLL
 
 
 
-        public static List<Ubicacion> getList(Expression<Func<Ubicacion, bool>> ubicaciones)
+        public static List<Ubicaciones> getList(Expression<Func<Ubicaciones, bool>> ubicaciones)
         {
-            List<Ubicacion> lista = new List<Ubicacion>();
+            List<Ubicaciones> lista = new List<Ubicaciones>();
             Contexto contexto = new Contexto();
             try
             {

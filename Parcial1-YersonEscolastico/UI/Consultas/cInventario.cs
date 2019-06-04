@@ -21,7 +21,7 @@ namespace Parcial1_YersonEscolastico.UI.Consultas
 
         private void RefrescarButton_Click(object sender, EventArgs e)
         {
-            Inventario inventario = InventarioBLL.Buscar(1);
+            Inventarios inventario = InventariosBLL.Buscar(1);
             double TotalInventario;
             TotalInventario = inventario.Total;
             TotalTextBox.Text = TotalInventario.ToString();

@@ -13,9 +13,9 @@ namespace Parcial1_YersonEscolastico.BLL
     class ProductosBLL
     {
 
-        public static Inventario LlenaClase()
+        public static Inventarios LlenaClase()
         {
-            Inventario inventario = new Inventario();
+            Inventarios inventario = new Inventarios();
             inventario.Total = 0;
             inventario.Id = 1;
 
@@ -25,15 +25,15 @@ namespace Parcial1_YersonEscolastico.BLL
         {
             bool paso = false;
             Contexto contexto = new Contexto();
-            Inventario inventario = new Inventario();
+            Inventarios inventario = new Inventarios();
             try
             {
-                inventario = InventarioBLL.Buscar(1);
+                inventario = InventariosBLL.Buscar(1);
                 if (inventario == null)
                 {
 
                     inventario = LlenaClase();
-                    paso = InventarioBLL.Guardar(inventario);
+                    paso = InventariosBLL.Guardar(inventario);
 
                 }
 
@@ -41,7 +41,7 @@ namespace Parcial1_YersonEscolastico.BLL
                     paso = contexto.SaveChanges() > 0;
 
                 inventario.Total += productos.ValorInventario;
-                InventarioBLL.Modificar(inventario);
+                InventariosBLL.Modificar(inventario);
             }
             catch (Exception)
             {
@@ -66,9 +66,9 @@ namespace Parcial1_YersonEscolastico.BLL
             {
                 double resultado = producto.ValorInventario - pro.ValorInventario;
 
-                Inventario inventario = InventarioBLL.Buscar(1);
+                Inventarios inventario = InventariosBLL.Buscar(1);
                 inventario.Total += resultado;
-                InventarioBLL.Modificar(inventario);
+                InventariosBLL.Modificar(inventario);
 
                 contexto.Entry(producto).State = EntityState.Modified;
                 paso = (contexto.SaveChanges() > 0);
@@ -94,9 +94,9 @@ namespace Parcial1_YersonEscolastico.BLL
             {
                 var eliminar = db.Productos.Find(id);
 
-                var Inventario = InventarioBLL.Buscar(1);
+                var Inventario = InventariosBLL.Buscar(1);
                 Inventario.Total -= eliminar.ValorInventario;
-                InventarioBLL.Modificar(Inventario);
+                InventariosBLL.Modificar(Inventario);
 
                 db.Entry(eliminar).State = EntityState.Deleted;
                 paso = (db.SaveChanges() > 0);

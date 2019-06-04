@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace Parcial1_YersonEscolastico.BLL
 {
-    public class InventarioBLL
+    public class InventariosBLL
     {
 
-        public static bool Guardar(Inventario inventario)
+        public static bool Guardar(Inventarios inventario)
         {
             bool paso = false;
 
@@ -35,7 +35,7 @@ namespace Parcial1_YersonEscolastico.BLL
 
 
 
-        public static bool Modificar(Inventario inventario)
+        public static bool Modificar(Inventarios inventario)
         {
             bool paso = false;
 
@@ -56,10 +56,10 @@ namespace Parcial1_YersonEscolastico.BLL
 
 
 
-        public static Inventario Buscar(int id)
+        public static Inventarios Buscar(int id)
         {
             Contexto contexto = new Contexto();
-            Inventario inventario = new Inventario();
+            Inventarios inventario = new Inventarios();
             try
             {
                 inventario = contexto.Inventario.Find(id);

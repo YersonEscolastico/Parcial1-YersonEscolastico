@@ -7,17 +7,16 @@ using System.Threading.Tasks;
 
 namespace Parcial1_YersonEscolastico.Entidades
 {
-    public class Inventario
+    public class Ubicaciones
     {
         [Key]
         public int Id { get; set; }
-        public double Total { get; set; }
+        public string Descripcion { get; set; }
 
-        public Inventario()
+    public Ubicaciones()
         {
             Id = 0;
-            Total = 0;
+            Descripcion = string.Empty;
         }
     }
 }
-

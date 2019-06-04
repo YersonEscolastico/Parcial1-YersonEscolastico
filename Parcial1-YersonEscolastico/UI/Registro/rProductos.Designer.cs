@@ -56,7 +56,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 36);
+            this.label2.Location = new System.Drawing.Point(9, 36);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 13);
             this.label2.TabIndex = 1;
@@ -65,7 +65,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 186);
+            this.label3.Location = new System.Drawing.Point(9, 186);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(81, 13);
             this.label3.TabIndex = 2;
@@ -74,7 +74,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 120);
+            this.label4.Location = new System.Drawing.Point(9, 120);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 13);
             this.label4.TabIndex = 3;
@@ -83,7 +83,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 89);
+            this.label5.Location = new System.Drawing.Point(9, 89);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(63, 13);
             this.label5.TabIndex = 4;
@@ -91,7 +91,7 @@
             // 
             // IDnumericUpDown
             // 
-            this.IDnumericUpDown.Location = new System.Drawing.Point(88, 29);
+            this.IDnumericUpDown.Location = new System.Drawing.Point(109, 29);
             this.IDnumericUpDown.Name = "IDnumericUpDown";
             this.IDnumericUpDown.Size = new System.Drawing.Size(52, 20);
             this.IDnumericUpDown.TabIndex = 5;
@@ -100,7 +100,7 @@
             // 
             this.DescripciontextBox.Location = new System.Drawing.Point(109, 82);
             this.DescripciontextBox.Name = "DescripciontextBox";
-            this.DescripciontextBox.Size = new System.Drawing.Size(173, 20);
+            this.DescripciontextBox.Size = new System.Drawing.Size(171, 20);
             this.DescripciontextBox.TabIndex = 6;
             // 
             // ValorInventariotextBox
@@ -114,7 +114,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 153);
+            this.label1.Location = new System.Drawing.Point(9, 153);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(34, 13);
             this.label1.TabIndex = 13;
@@ -128,7 +128,7 @@
             // 
             this.Eliminarbutton.Image = global::Parcial1_YersonEscolastico.Properties.Resources.Eliminar;
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Eliminarbutton.Location = new System.Drawing.Point(234, 263);
+            this.Eliminarbutton.Location = new System.Drawing.Point(205, 263);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(75, 51);
             this.Eliminarbutton.TabIndex = 12;
@@ -141,7 +141,7 @@
             // 
             this.Guardarbutton.Image = global::Parcial1_YersonEscolastico.Properties.Resources.Guardar;
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Guardarbutton.Location = new System.Drawing.Point(119, 263);
+            this.Guardarbutton.Location = new System.Drawing.Point(109, 263);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(75, 51);
             this.Guardarbutton.TabIndex = 11;
@@ -154,7 +154,7 @@
             // 
             this.Nuevobutton.Image = global::Parcial1_YersonEscolastico.Properties.Resources.Nuevo;
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Nuevobutton.Location = new System.Drawing.Point(9, 263);
+            this.Nuevobutton.Location = new System.Drawing.Point(12, 263);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(75, 51);
             this.Nuevobutton.TabIndex = 10;
@@ -167,9 +167,9 @@
             // 
             this.Buscarbutton.Image = global::Parcial1_YersonEscolastico.Properties.Resources.Buscar;
             this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.Buscarbutton.Location = new System.Drawing.Point(197, 29);
+            this.Buscarbutton.Location = new System.Drawing.Point(187, 14);
             this.Buscarbutton.Name = "Buscarbutton";
-            this.Buscarbutton.Size = new System.Drawing.Size(85, 35);
+            this.Buscarbutton.Size = new System.Drawing.Size(93, 35);
             this.Buscarbutton.TabIndex = 9;
             this.Buscarbutton.Text = "Buscar";
             this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -179,7 +179,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 224);
+            this.label6.Location = new System.Drawing.Point(9, 224);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(55, 13);
             this.label6.TabIndex = 15;
@@ -195,9 +195,9 @@
             // 
             // masButton
             // 
-            this.masButton.Location = new System.Drawing.Point(215, 216);
+            this.masButton.Location = new System.Drawing.Point(215, 215);
             this.masButton.Name = "masButton";
-            this.masButton.Size = new System.Drawing.Size(35, 23);
+            this.masButton.Size = new System.Drawing.Size(35, 21);
             this.masButton.TabIndex = 17;
             this.masButton.Text = "Mas";
             this.masButton.UseVisualStyleBackColor = true;
@@ -235,7 +235,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(321, 323);
+            this.ClientSize = new System.Drawing.Size(292, 323);
             this.Controls.Add(this.CostoumericUpDown);
             this.Controls.Add(this.ExistenciaNumericUpDown);
             this.Controls.Add(this.masButton);

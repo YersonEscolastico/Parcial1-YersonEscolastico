@@ -65,7 +65,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 171);
+            this.label3.Location = new System.Drawing.Point(6, 186);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(81, 13);
             this.label3.TabIndex = 2;
@@ -74,7 +74,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 115);
+            this.label4.Location = new System.Drawing.Point(6, 120);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 13);
             this.label4.TabIndex = 3;
@@ -105,7 +105,7 @@
             // 
             // ValorInventariotextBox
             // 
-            this.ValorInventariotextBox.Location = new System.Drawing.Point(109, 164);
+            this.ValorInventariotextBox.Location = new System.Drawing.Point(109, 179);
             this.ValorInventariotextBox.Name = "ValorInventariotextBox";
             this.ValorInventariotextBox.ReadOnly = true;
             this.ValorInventariotextBox.Size = new System.Drawing.Size(100, 20);
@@ -114,7 +114,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 141);
+            this.label1.Location = new System.Drawing.Point(6, 153);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(34, 13);
             this.label1.TabIndex = 13;
@@ -179,7 +179,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 200);
+            this.label6.Location = new System.Drawing.Point(12, 224);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(55, 13);
             this.label6.TabIndex = 15;
@@ -188,14 +188,14 @@
             // ubicacioncomboBox
             // 
             this.ubicacioncomboBox.FormattingEnabled = true;
-            this.ubicacioncomboBox.Location = new System.Drawing.Point(109, 200);
+            this.ubicacioncomboBox.Location = new System.Drawing.Point(109, 216);
             this.ubicacioncomboBox.Name = "ubicacioncomboBox";
             this.ubicacioncomboBox.Size = new System.Drawing.Size(100, 21);
             this.ubicacioncomboBox.TabIndex = 16;
             // 
             // masButton
             // 
-            this.masButton.Location = new System.Drawing.Point(215, 200);
+            this.masButton.Location = new System.Drawing.Point(215, 216);
             this.masButton.Name = "masButton";
             this.masButton.Size = new System.Drawing.Size(35, 23);
             this.masButton.TabIndex = 17;
@@ -205,17 +205,17 @@
             // 
             // ExistenciaNumericUpDown
             // 
-            this.ExistenciaNumericUpDown.Location = new System.Drawing.Point(109, 108);
+            this.ExistenciaNumericUpDown.Location = new System.Drawing.Point(109, 113);
             this.ExistenciaNumericUpDown.Name = "ExistenciaNumericUpDown";
-            this.ExistenciaNumericUpDown.Size = new System.Drawing.Size(56, 20);
+            this.ExistenciaNumericUpDown.Size = new System.Drawing.Size(100, 20);
             this.ExistenciaNumericUpDown.TabIndex = 18;
             this.ExistenciaNumericUpDown.ValueChanged += new System.EventHandler(this.ExistenciaNumericUpDown_ValueChanged);
             // 
             // CostoumericUpDown
             // 
-            this.CostoumericUpDown.Location = new System.Drawing.Point(109, 134);
+            this.CostoumericUpDown.Location = new System.Drawing.Point(109, 146);
             this.CostoumericUpDown.Name = "CostoumericUpDown";
-            this.CostoumericUpDown.Size = new System.Drawing.Size(56, 20);
+            this.CostoumericUpDown.Size = new System.Drawing.Size(100, 20);
             this.CostoumericUpDown.TabIndex = 19;
             this.CostoumericUpDown.ValueChanged += new System.EventHandler(this.CostoumericUpDown_ValueChanged);
             // 

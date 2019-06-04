@@ -57,9 +57,11 @@ namespace Parcial1_YersonEscolastico.BLL
         {
             bool paso = false;
             Contexto db = new Contexto();
+
             try
             {
-                var eliminar = db.ubicacion.Find(id);
+                var eliminar = db.Productos.Find(id);
+
                 db.Entry(eliminar).State = EntityState.Deleted;
                 paso = (db.SaveChanges() > 0);
             }
@@ -67,6 +69,7 @@ namespace Parcial1_YersonEscolastico.BLL
             {
                 throw;
             }
+
             finally
             {
                 db.Dispose();

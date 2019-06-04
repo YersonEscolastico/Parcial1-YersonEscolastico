@@ -191,7 +191,6 @@ namespace Parcial1_YersonEscolastico.UI.Registro
 
             if (productos != null)
             {
-                MessageBox.Show("Producto Encontrado");
                 LlenaCampo(productos);
             }
             else

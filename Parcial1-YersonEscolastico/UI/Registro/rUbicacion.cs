@@ -68,21 +68,6 @@ namespace Parcial1_YersonEscolastico.UI.Registro
         }
 
 
-        private bool VEliminar()
-        {
-            bool paso = true;
-            MyErrorProvider.Clear();
-
-            if (IdnumericUpDown.Value == 0)
-            {
-                MyErrorProvider.SetError(IdnumericUpDown, "Debe introducir un id para poder eliminar un producto");
-                IdnumericUpDown.Focus();
-                paso = false;
-            }
-            return paso;
-        }
-
-
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
             Ubicaciones ubicacion;
@@ -154,6 +139,20 @@ namespace Parcial1_YersonEscolastico.UI.Registro
         }
 
 
+        private bool VEliminar()
+        {
+            bool paso = true;
+            MyErrorProvider.Clear();
+
+            if (IdnumericUpDown.Value == 0)
+            {
+                MyErrorProvider.SetError(IdnumericUpDown, "Debe introducir un id para poder eliminar un producto");
+                IdnumericUpDown.Focus();
+                paso = false;
+            }
+            return paso;
+        }
+
 
         private void Eliminarbutton_Click_1(object sender, EventArgs e)
         {
@@ -161,15 +160,17 @@ namespace Parcial1_YersonEscolastico.UI.Registro
             VEliminar();
             int id;
             int.TryParse(IdnumericUpDown.Text, out id);
-            Limpiar();
-            if (UbicacionesBLL.Eliminar(id))
+
+            if (!ExisteEnLaBaseDeDatos())
+                return;
+            if (ProductosBLL.Eliminar(id))
             {
-                MessageBox.Show("Eliminado");
+                MessageBox.Show("Eliminado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Limpiar();
             }
+
             else
-            {
-                MyErrorProvider.SetError(IdnumericUpDown, "No se puede elimina, porque no existe");
-            }
+                MyErrorProvider.SetError(IdnumericUpDown, "No se puede eliminar un producto que no existe");
         }
     }
 }

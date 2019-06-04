@@ -27,8 +27,8 @@ namespace Parcial1_YersonEscolastico.UI.Registro
         {
             IDnumericUpDown.Value = 0;
             DescripciontextBox.Text = string.Empty;
-            ExistenciatextBox.Text = string.Empty;
-            CostotextBox.Text = string.Empty;
+            ExistenciaNumericUpDown.Value = 0;
+            CostoumericUpDown.Value = 0;
             ValorInventariotextBox.Text = string.Empty;
             MyErrorProvider.Clear();
         }
@@ -46,8 +46,8 @@ namespace Parcial1_YersonEscolastico.UI.Registro
 
             producto.ProductoId = Convert.ToInt32(IDnumericUpDown.Value);
             producto.Descripcion = DescripciontextBox.Text;
-            producto.Costo = Convert.ToDouble(CostotextBox.Text);
-            producto.Existencia = Convert.ToDouble(ExistenciatextBox.Text);
+            producto.Costo = Convert.ToDouble(CostoumericUpDown.Value);
+            producto.Existencia = Convert.ToDouble(ExistenciaNumericUpDown.Value);
             producto.ValorInventario = Convert.ToDouble(ValorInventariotextBox.Text);
 
             return producto;
@@ -58,11 +58,10 @@ namespace Parcial1_YersonEscolastico.UI.Registro
         {
             IDnumericUpDown.Value = productos.ProductoId;
             DescripciontextBox.Text = productos.Descripcion;
-            ExistenciatextBox.Text = productos.Existencia.ToString();
-            CostotextBox.Text = productos.Costo.ToString();
-            ValorInventariotextBox.Text = productos.ValorInventario.ToString();
+            ExistenciaNumericUpDown.Value =Convert.ToDecimal(productos.Existencia);
+            CostoumericUpDown.Value = Convert.ToDecimal( productos.Costo);
+            ValorInventariotextBox.Text =Convert.ToString( productos.ValorInventario);
         }
-
 
         private bool Validar()
         {
@@ -75,16 +74,17 @@ namespace Parcial1_YersonEscolastico.UI.Registro
                 DescripciontextBox.Focus();
                 paso = false;
             }
-            if (String.IsNullOrWhiteSpace(ExistenciatextBox.Text))
+            if (CostoumericUpDown.Value == 0)
             {
-                MyErrorProvider.SetError(ExistenciatextBox, "Este campo no puede estar vacio");
-                ExistenciatextBox.Focus();
+                MyErrorProvider.SetError(CostoumericUpDown, "Este campo no bebe ser 0");
+                CostoumericUpDown.Focus();
                 paso = false;
+
             }
-            if (String.IsNullOrWhiteSpace(CostotextBox.Text))
+            if (ExistenciaNumericUpDown.Value == 0)
             {
-                MyErrorProvider.SetError(CostotextBox, "Este campo no puede estar vacio");
-                CostotextBox.Focus();
+                MyErrorProvider.SetError(ExistenciaNumericUpDown, "Este campo no bebe ser 0");
+                ExistenciaNumericUpDown.Focus();
                 paso = false;
             }
             return paso;
@@ -201,82 +201,6 @@ namespace Parcial1_YersonEscolastico.UI.Registro
         }
 
 
-            private void ExistenciatextBox_TextChanged(object sender, EventArgs e)
-        {
-            if (CostotextBox.Text.Length > 0 && ExistenciatextBox.Text.Length > 0)
-                ValorInventariotextBox.Text = Convert.ToString(Convert.ToDouble(CostotextBox.Text) * Convert.ToDouble(ExistenciatextBox.Text));
-
-            if (CostotextBox.Text.Length > 0 && ExistenciatextBox.Text.Length == 0)
-                ValorInventariotextBox.Text = "0";
-
-            if (CostotextBox.Text.Length == 0 && ExistenciatextBox.Text.Length > 0)
-                ValorInventariotextBox.Text = "0";
-
-            if (CostotextBox.Text.Length == 0 && ExistenciatextBox.Text.Length == 0)
-                ValorInventariotextBox.Text = "0";
-        }
-
-
-
-        private void CostotextBox_TextChanged(object sender, EventArgs e)
-        {
-            if (CostotextBox.Text.Length > 0 && ExistenciatextBox.Text.Length > 0)
-                ValorInventariotextBox.Text = Convert.ToString(Convert.ToDouble(CostotextBox.Text) * Convert.ToDouble(ExistenciatextBox.Text));
-
-            if (CostotextBox.Text.Length > 0 && ExistenciatextBox.Text.Length == 0)
-                ValorInventariotextBox.Text = "0";
-
-            if (CostotextBox.Text.Length == 0 && ExistenciatextBox.Text.Length > 0)
-                ValorInventariotextBox.Text = "0";
-
-            if (CostotextBox.Text.Length == 0 && ExistenciatextBox.Text.Length == 0)
-                ValorInventariotextBox.Text = "0";
-
-        }
-
-
-        private void ExistenciatextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            char ch = e.KeyChar;
-
-            if (e.KeyChar == '.')
-            {
-               if(ExistenciatextBox.TextLength < 1)
-                    e.Handled = true;
-            }
- 
-            if (ch == 46 && ExistenciatextBox.Text.IndexOf('.') != -1)
-                e.Handled = true;
-     
-            if(!char.IsDigit(ch) && ch != 8 && ch != 46)
-            {
-                e.Handled = true;
-            }
-            return;
-        }
-
-
-
-        private void CostotextBox_KeyPress(object sender, KeyPressEventArgs e)
-        { 
-            char ch = e.KeyChar;
-
-            if (e.KeyChar == '.')
-            {
-                if (CostotextBox.TextLength < 1)
-                    e.Handled = true;
-            }
-
-            if (ch == 46 && CostotextBox.Text.IndexOf('.') != -1)
-                e.Handled = true;
-
-            if (!char.IsDigit(ch) && ch != 8 && ch != 46)
-            {
-                e.Handled = true;
-            }
-            return;
-        }
-
 
 
         private void LlenarComboBox()
@@ -293,6 +217,21 @@ namespace Parcial1_YersonEscolastico.UI.Registro
         {
             rUbicacion ub = new rUbicacion();
             ub.ShowDialog();
+        }
+
+        public void TotalInventario()
+        {
+            ValorInventariotextBox.Text = Convert.ToString(Convert.ToDecimal(ExistenciaNumericUpDown.Value) * Convert.ToDecimal(CostoumericUpDown.Value));
+        }
+
+        private void ExistenciaNumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            TotalInventario();
+        }
+
+        private void CostoumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            TotalInventario();
         }
     }
 }
